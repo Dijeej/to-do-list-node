@@ -47,9 +47,12 @@
                 <a id="close" href="/"></a>
                 <h2>Confirmação</h2>
                 <hr>
-                <p>Apagar a tarefas: <%= taskDelete.task %>?</p> 
-                <a id="cancel" href="/">Não</a>
-                <a id="confirm" href="/delete/<%= taskDelete._id %>">Sim</a>
+                <p>Apagar a tarefa:</p>
+                <p><%= taskDelete.task %>?</p>
+                <div class="modal-btns"> 
+                    <a id="cancel" href="/">Não</a>
+                    <a id="confirm" href="/delete/<%= taskDelete._id %>">Sim</a>
+                </div>
             </div>
         </section>
         <% } %>

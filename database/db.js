@@ -8,7 +8,7 @@ const connectToDB = () => {
             useUnifiedTopology: true
         }
     )
-    .then(() => console.log("MongoDB Atlas conectado."))
+    .then(() => {console.log("Servidor conectado em: http://localhost:3000/"); console.log("MongoDB Atlas conectado.")})
     .catch((erro) => console.log(erro));
 };
 

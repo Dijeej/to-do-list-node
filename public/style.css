@@ -8,6 +8,9 @@
     --cor-quaternaria: rgb(255, 245, 218);
     --cor-quinaria: rgb(142, 120, 215);
     --cor-senaria: rgba(228, 214, 91, 0.799);
+
+    --icon-close: "\F629";
+    --icon-close-fill: "\F628";
 }
 
 * {
@@ -133,7 +136,7 @@ section.modal {
     background-color: rgba(0, 0, 0, 0.25);
 }
 div.card {
-    width: 30rem;
+    width: 20rem;
     position: relative;
     background-color: var(--cor-terciaria);
     border: none;
@@ -141,7 +144,7 @@ div.card {
     
 }
 div.card h2 {
-    padding: 2rem;
+    padding: 1rem;
     margin: 0;
 }
 div.card a {
@@ -155,11 +158,49 @@ div.card a#close {
     font-size: larger;
 }
 div.card a#close::before {
-    content: "\F629"; /* Código do ícone outlined */
-    font-family: "bootstrap-icons"; /* Importante para o ícone renderizar */
+    content: var(--icon-close);
+    font-family: "bootstrap-icons";
+    
 }
 
 div.card a#close:hover::before {
-    content: "\F628"; /* Código do ícone filled */
+    content: var(--icon-close-fill);
     color: brown;
+}
+
+div.card p {
+    pad: .3rem;
+    text-align: center;
+    font-size: large;
+    line-height: 2rem;
+    font-weight: 500;
+}
+
+div.modal-btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+}
+div.modal-btns a{ 
+    padding: .5rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+
+div.modal-btns a#cancel {
+    background-color: brown;
+}
+div.modal-btns a#confirm {
+    background-color: rgb(59, 157, 157)
+}
+
+div.modal-btns a#cancel:hover {
+    background-color: rgb(94, 24, 24); 
+}
+div.modal-btns a#confirm:hover {
+    background-color: rgb(37, 100, 100);
 }
