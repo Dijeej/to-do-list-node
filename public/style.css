@@ -10,6 +10,8 @@
 
     --icon-close: "\F629";
     --icon-close-fill: "\F628";
+    --icon-check-square: "\F26D";
+    --icon-check-square-fill: "\F26C";
 }
 
 * {
@@ -108,12 +110,24 @@ ul li a {
     text-decoration: none;
     color: var(--cor-primaria);
 }
-
+div.task-itens {
+    align-items: center;
+    text-align: center;
+}
 ul li span {
     color: var(--cor-senaria);
     font-style: italic;
     font-size: .9rem;
     padding-left: 1rem;
+}
+ul li div a.task-done,ul li div span.task-done{
+    color:darkgray;
+    text-decoration: line-through;
+}
+div.task-info i {
+    font-size: larger;
+    cursor: pointer;
+    color: var(--cor-primaria);
 }
 .tasks-btns a i{
     padding: .5rem;

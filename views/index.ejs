@@ -34,9 +34,13 @@
             <ul>
                 <% tasksList.forEach((task) => { %>
                     <li>
-                        <div>
-                            <a href="/"><%= task.task %> </a> 
-                            <span> Criado em <%= task.date.toLocaleDateString('pt-BR') %></span>
+                        <div class="task-info">
+                            
+                            <a href="/taskDoneUndone/<%= task._id %>" class="task-<%= task.check?'done':'undone' %>">
+                                <i class="bi <%= task.check ? 'bi-check-square-fill' : 'bi-check-square' %>"></i>
+                                <%= task.task %> 
+                            </a> 
+                            <span class="task-<%= task.check?'done':'undone' %>"> Criado em <%= task.date.toLocaleDateString('pt-BR') %></span>
                         </div>
                         <div class="tasks-btns">
                             <a href="/getById/<%= task._id %>/update"><i class="bi bi-pencil-square"></i></a>

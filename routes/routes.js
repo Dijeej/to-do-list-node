@@ -9,5 +9,6 @@ routes.post("/create", taskController.createTask);
 routes.get("/getById/:id/:method", taskController.getById);
 routes.post("/update/:id", taskController.updateTask);
 routes.get("/delete/:id", taskController.deleteTask);
+routes.get("/taskDoneUndone/:id", taskController.taskDoneUndone);
 
 export { routes };

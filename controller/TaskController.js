@@ -65,6 +65,7 @@ class TaskController {
             res.status(500).send({error: err.message});
         }
     }
+
     async updateTask (req, res) {
         try {
             const task = req.body 
@@ -76,11 +77,23 @@ class TaskController {
             res.status(500).send({error: err.message});
         }
     }
+
     async deleteTask (req, res) {
         try {
             await Task.deleteOne({_id: req.params.id});
             message = "Tarefa apagada com sucesso";
             type = "success";
+            res.redirect("/");
+        } catch (err) {
+            res.status(500).send({error: err.message});
+        }
+    }
+
+    async taskDoneUndone (req, res) {
+        try {
+            const task = await Task.findOne({_id: req.params.id});
+            task.check = !task.check;
+            await Task.updateOne({_id: req.params.id}, task);
             res.redirect("/");
         } catch (err) {
             res.status(500).send({error: err.message});
